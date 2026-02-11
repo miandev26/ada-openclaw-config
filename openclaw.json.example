@@ -1,0 +1,115 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.2.9",
+    "lastTouchedAt": "2026-02-11T09:50:50.406Z"
+  },
+  "browser": {
+    "headless": true,
+    "noSandbox": true,
+    "defaultProfile": "openclaw"
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "Gemini 3 Flash Preview",
+        "fallbacks": [
+          "ChatGPT 5.2",
+          "Claude Sonnet 4.5",
+          "Grok 4.1 Fast Reasoning"
+        ]
+      },
+      "models": {
+        "anthropic/claude-sonnet-4-5": {
+          "alias": "Claude Sonnet 4.5"
+        },
+        "openai/gpt-5.2": {
+          "alias": "ChatGPT 5.2"
+        },
+        "google/gemini-3-flash-preview": {
+          "alias": "Gemini 3 Flash Preview"
+        },
+        "xai/grok-4-1-fast-reasoning": {
+          "alias": "Grok 4.1 Fast Reasoning"
+        }
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true
+  },
+  "hooks": {
+    "token": "REDACTED"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "REDACTED",
+      "allowFrom": [
+        "7166595708"
+      ],
+      "groupPolicy": "allowlist",
+      "streamMode": "partial"
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "controlUi": {
+      "allowInsecureAuth": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "REDACTED"
+    },
+    "remote": {
+      "token": "REDACTED"
+    }
+  },
+  "skills": {
+    "entries": {
+      "coding-agent": {
+        "enabled": true
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "whatsapp": {
+        "enabled": true
+      },
+      "discord": {
+        "enabled": true
+      },
+      "imessage": {
+        "enabled": false
+      },
+      "telegram": {
+        "enabled": true
+      },
+      "slack": {
+        "enabled": true
+      },
+      "nostr": {
+        "enabled": true
+      },
+      "signal": {
+        "enabled": false
+      },
+      "googlechat": {
+        "enabled": true
+      }
+    }
+  }
+}
